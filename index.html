@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>App Hub</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap');
+
+  :root{
+    --bg: #FFF8EF;
+    --panel: #FFFFFF;
+    --panel-border: #F1E1D0;
+    --text: #2E2A2E;
+    --muted: #948C82;
+    --accent: #FF6B4A;
+    --accent-2: #12B5A6;
+    --accent-dim: rgba(255, 107, 74, 0.10);
+  }
+
+  *{ box-sizing: border-box; margin: 0; padding: 0; }
+
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.5;
+  }
+
+  /* Hero */
+  /* Banner background image: drop a file at images/banner-bg.jpg (landscape, ~1600x600px, JPG/PNG/WebP).
+     Until that file exists, the gradient below shows on its own as a colorful fallback. */
+  .hero{
+    position: relative;
+    padding: 6rem 1.5rem 5rem;
+    text-align: center;
+    overflow: hidden;
+    background-image:
+      linear-gradient(135deg, rgba(255,107,74,0.75), rgba(18,181,166,0.65)),
+      url('images/banner-bg.png');
+    background-size: cover, cover;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    background-color: var(--accent);
+  }
+
+  .hero-eyebrow{
+    position: relative;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #FFE8A3;
+    margin-bottom: 1.1rem;
+  }
+
+  .hero h1{
+    position: relative;
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.22);
+  }
+
+  .hero p{
+    position: relative;
+    margin-top: 1rem;
+    color: rgba(255,255,255,0.92);
+    font-size: 1.05rem;
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 1px 10px rgba(0,0,0,0.18);
+  }
+
+  /* Sections */
+  main{
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 6rem;
+  }
+
+  .category{
+    margin-bottom: 3.5rem;
+  }
+
+  .category-label{
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .category-label span{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .category-label::after{
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--panel-border);
+  }
+
+  .app-list{
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .app-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+  }
+
+  .app-row:hover{
+    border-color: var(--accent);
+    background: var(--accent-dim);
+    transform: translateX(2px);
+  }
+
+  .app-name{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.08rem;
+  }
+
+  .app-row .arrow{
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--muted);
+    transition: color 0.15s ease, transform 0.15s ease;
+  }
+
+  .app-row:hover .arrow{
+    color: var(--accent);
+    transform: translateX(3px);
+  }
+
+  footer{
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.8rem;
+    padding-bottom: 3rem;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .app-row, .app-row .arrow{ transition: none; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-eyebrow">Personal App Hub</div>
+    <h1>G.O.A.Ted Apps </h1>
+    <p>A single launchpad for all of Yiwen's apps.</p>
+  </header>
+
+  <main>
+
+    <section class="category">
+      <div class="category-label"><span>Kids Study</span></div>
+      <div class="app-list">
+        <a class="app-row" href="https://goatedapps.github.io/learntingxie/">
+          <span class="app-name">Rui Min's P5 Ting Xie App</span>
+          <span class="arrow">&rarr;</span>
+        </a>
+        <a class="app-row" href="https://goatedapps.github.io/rq-spelling/">
+          <span class="app-name">Rui Qi's Spelling</span>
+          <span class="arrow">&rarr;</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="category">
+      <div class="category-label"><span>Fun and Games</span></div>
+      <div class="app-list">
+        <a class="app-row" href="https://goatedapps.github.io/sudoku/">
+          <span class="app-name">Sudoku</span>
+          <span class="arrow">&rarr;</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="category">
+      <div class="category-label"><span>Utilities</span></div>
+      <div class="app-list">
+        <a class="app-row" href="https://goatedapps.github.io/menuplanner/">
+          <span class="app-name">Menu Planner</span>
+          <span class="arrow">&rarr;</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>Created by Yiwen and Claude. Copyright 2026.</footer>
+
+</body>
+</html>
