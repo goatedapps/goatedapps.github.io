@@ -42,6 +42,11 @@ const APP_DATA = [
         name: "Sudoku",
         url: "https://goatedapps.github.io/sudoku/",
         description: "Classic logic puzzle, multiple difficulties"
+      },
+      {
+        name: "Sushi Snake",
+        url: "https://goatedapps.github.io/Sushi-snake/",
+        description: "Classic snake game with a sushi twist"
       }
     ]
   },
