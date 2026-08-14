@@ -19,19 +19,19 @@ const APP_DATA = [
     category: "Kids Study",
     apps: [
       {
-        name: "Rui Min's P5 Ting Xie App",
-        url: "https://goatedapps.github.io/learntingxie/",
-        description: "Primary 5 Chinese dictation practice"
+        name: "P5 Chinese Learning App",
+        url: "https://chinese-practice-theta.vercel.app",
+        description: "Primary 5 Chinese language practice"
+      },
+      {
+        name: "Rui Qi's Ting Xie",
+        url: "https://goatedapps.github.io/RQtingxie/",
+        description: "Primary 2 听写 Weekly Practice"
       },
       {
         name: "Rui Qi's Spelling",
         url: "https://goatedapps.github.io/rq-spelling/",
         description: "Weekly English spelling word drills"
-      },
-      {
-        name: "P5 Chinese Learning App",
-        url: "https://chinese-practice-theta.vercel.app",
-        description: "Primary 5 Chinese language practice"
       }
     ]
   },
