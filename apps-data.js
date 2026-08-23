@@ -67,6 +67,11 @@ const APP_DATA = [
         name: "Beijing Trip Itinerary",
         url: "https://goatedapps.github.io/Beijing2026/",
         description: "Day-by-day plan for the Beijing trip"
+      },
+      {
+        name: "2026 Sep Guangzhou Trip Itinerary",
+        url: "https://goatedapps.github.io/2026-Oct-Guangzhou/",
+        description: "Day-by-day plan for the Guangzhou trip"
       }
     ]
   }
