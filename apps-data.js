@@ -47,6 +47,14 @@ const APP_DATA = [
         name: "Sushi Snake",
         url: "https://goatedapps.github.io/Sushi-snake/",
         description: "Classic snake game with a sushi twist"
+      },
+      {
+        name: "Learn Chinese Nouns",
+        url: "https://goatedapps.github.io/chinese-nouns-game/"
+      },
+      {
+        name: "Pack Table Game",
+        url: "https://goatedapps.github.io/PackTableGame/"
       }
     ]
   },
