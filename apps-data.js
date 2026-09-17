@@ -55,6 +55,10 @@ const APP_DATA = [
       {
         name: "Pack Table Game",
         url: "https://goatedapps.github.io/PackTableGame/"
+      },
+      {
+        name: "TK Alien Exodus",
+        url: "https://goatedapps.github.io/TK-Alien-Exodus/"
       }
     ]
   },
