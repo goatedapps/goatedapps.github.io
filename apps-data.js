@@ -32,6 +32,10 @@ const APP_DATA = [
         name: "Rui Qi's Spelling",
         url: "https://goatedapps.github.io/rq-spelling/",
         description: "Weekly English spelling word drills"
+      },
+      {
+        name: "S2 Chinese EOY",
+        url: "https://goatedapps.github.io/S2-chinese-EOY/"
       }
     ]
   },
