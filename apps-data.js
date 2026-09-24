@@ -19,9 +19,9 @@ const APP_DATA = [
     category: "Kids Study",
     apps: [
       {
-        name: "P5 Chinese Learning App",
+        name: "Chinese Learning App",
         url: "https://chinese-practice-theta.vercel.app",
-        description: "Primary 5 Chinese language practice"
+        description: "Little Owl Chinese language practice"
       },
       {
         name: "Rui Qi's Ting Xie",
@@ -36,6 +36,10 @@ const APP_DATA = [
       {
         name: "S2 Chinese EOY",
         url: "https://goatedapps.github.io/S2-chinese-EOY/"
+      },
+       {
+        name: "Word Spirit Quest (P2 and P5)",
+        url: "https://goatedapps.github.io/RPG-ChineseGame/game/"
       }
     ]
   },
@@ -83,11 +87,6 @@ const APP_DATA = [
         name: "Beijing Trip Itinerary",
         url: "https://goatedapps.github.io/Beijing2026/",
         description: "Day-by-day plan for the Beijing trip"
-      },
-      {
-        name: "2026 Sep Guangzhou Trip Itinerary",
-        url: "https://goatedapps.github.io/2026-Oct-Guangzhou/",
-        description: "Day-by-day plan for the Guangzhou trip"
       }
     ]
   }
