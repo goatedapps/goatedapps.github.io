@@ -30,10 +30,10 @@ const APP_DATA = [
         url: "https://chinese-practice-theta.vercel.app",
         description: "Little Owl Chinese language practice",
         screenshot: "images/apps/chinese-practice.jpg",
-        techStack: ["Stack to be confirmed"],
-        stackVerified: false,
-        learning: "Designing short practice sessions around vocabulary, revision and feedback, with a guest experience that lets children start learning quickly.",
-        learningDraft: true
+        techStack: ["React" , "TypeScript", "Vite", "Tailwind CSS", "Supasbase", "Vercel"],
+        stackVerified: true,
+        learning: "Authentication, database integration, React web app structure, deployment with Vercel, Gemini API integration",
+        learningDraft: false
       },
       {
         id: "rq-tingxie",
@@ -42,8 +42,8 @@ const APP_DATA = [
         description: "Primary 2 听写 Weekly Practice",
         screenshot: "images/apps/RQtingxie.jpg",
         techStack: ["HTML", "CSS", "JavaScript"],
-        learning: "Breaking a spelling exercise into a clear listen, write and reveal sequence, and keeping weekly lesson content separate from the practice flow.",
-        learningDraft: true
+        learning: "Quick and easy web app development.",
+        learningDraft: false
       },
       {
         id: "rq-spelling",
@@ -52,7 +52,7 @@ const APP_DATA = [
         description: "Weekly English spelling word drills",
         screenshot: "images/apps/rq-spelling.jpg",
         techStack: ["HTML", "CSS", "JavaScript"],
-        learning: "Turning a weekly word list into repeatable practice, with simple navigation and encouraging feedback for younger learners.",
+        learning: "Quick and easy web app development.",
         learningDraft: true
       },
       {
@@ -62,18 +62,18 @@ const APP_DATA = [
         description: "Secondary 2 Chinese vocabulary practice",
         screenshot: "images/apps/S2-chinese-EOY.jpg",
         techStack: ["HTML", "CSS", "JavaScript"],
-        learning: "Structuring revision across flashcards, games and fill-in-the-blank exercises while keeping the vocabulary list easy to review.",
-        learningDraft: true
+        learning: "Quick and easy web app development.",
+        learningDraft: false
       },
       {
         id: "word-spirit-quest",
         name: "Word Spirit Quest (P2 and P5)",
-        url: "https://goatedapps.github.io/RPG-ChineseGame/game/",
+        url: "https:wordspirit.quest/",
         description: "Chinese vocabulary adventure for Primary 2 and 5",
         screenshot: "images/apps/RPG-ChineseGame.jpg",
         techStack: ["JavaScript", "Hanzi Writer", "YAML"],
-        learning: "Sharing one adventure world between Primary 2 and Primary 5 while keeping each level's vocabulary, progression and saved progress separate.",
-        learningDraft: true
+        learning: "Switching to Codex (from Claude), Hanzi writer, token efficiency, game development - tutorials and walkthroughs, gaming psychology, integrating feedback forms",
+        learningDraft: false
       }
     ]
   },
@@ -81,14 +81,23 @@ const APP_DATA = [
     category: "Fun and Games",
     apps: [
       {
+        id: "bishy-bashy",
+        name: "Bishy-Bashy",
+        url: "https://goatedapps.github.io/Bishy-Bashy/",
+        description: "A multiplayer game",
+        techStack: ["HTML", "CSS", "JavaScript"],
+        learning: "Server-Client website, Multiplayer game, Render as game server",
+        learningDraft: false
+      },
+      {
         id: "sudoku",
         name: "Sudoku",
         url: "https://goatedapps.github.io/sudoku/",
         description: "Classic logic puzzle, multiple difficulties",
         screenshot: "images/apps/sudoku.jpg",
         techStack: ["HTML", "CSS", "JavaScript"],
-        learning: "Working with puzzle state, difficulty settings and validation, while supporting both keyboard and touch input.",
-        learningDraft: true
+        learning: "Experimenting with simple game development - one of the first games I vibecoded.",
+        learningDraft: false
       },
       {
         id: "sushi-snake",
@@ -97,8 +106,8 @@ const APP_DATA = [
         description: "Classic snake game with a sushi twist",
         screenshot: "images/apps/Sushi-snake.jpg",
         techStack: ["HTML", "CSS", "JavaScript"],
-        learning: "Coordinating a game loop, collision detection and changing difficulty, with audio and visual feedback that responds to play.",
-        learningDraft: true
+        learning: "Sharing on vibe-coding with the family.",
+        learningDraft: false
       },
       {
         id: "learn-chinese-nouns",
@@ -107,7 +116,7 @@ const APP_DATA = [
         description: "Practice Chinese nouns through play",
         screenshot: "images/apps/chinese-nouns-game.jpg",
         techStack: ["HTML", "CSS", "JavaScript"],
-        learning: "Turning noun study into a group game with picture clues, matching rounds and timed descriptions.",
+        learning: "Quick and easy web app development to help the kids learn Chinese nouns in a fun way",
         learningDraft: true
       },
       {
@@ -117,7 +126,7 @@ const APP_DATA = [
         description: "Clear the mess before it piles up",
         screenshot: "images/apps/PackTableGame.jpg",
         techStack: ["HTML", "CSS", "JavaScript"],
-        learning: "Making a familiar tidying task feel playful with clear controls, sound and a simple start-to-play flow.",
+        learning: "My daughter asked for this game.",
         learningDraft: true
       },
       {
@@ -127,7 +136,7 @@ const APP_DATA = [
         description: "A cinematic alien escape game",
         screenshot: "images/apps/TK-Alien-Exodus.jpg",
         techStack: ["HTML Canvas", "CSS", "JavaScript"],
-        learning: "Coordinating a canvas-based game with character choices, touch controls, combat feedback and distinct mission zones.",
+        learning: "I didn't make this. My husband did as I asked him to try out the new GPT-Astra 6 model",
         learningDraft: true
       }
     ]
@@ -142,7 +151,7 @@ const APP_DATA = [
         description: "Plan out the week's family meals",
         screenshot: "images/apps/menuplanner.jpg",
         techStack: ["JavaScript", "CSS", "Local storage"],
-        learning: "Modelling meals with reusable tags, generating plans from constraints, and saving choices locally so a plan survives a page refresh.",
+        learning: "P.",
         learningDraft: true
       },
       {
@@ -158,7 +167,7 @@ const APP_DATA = [
     ]
   },
   {
-    category: "Travel",
+    category: "Archives",
     apps: [
       {
         id: "beijing-itinerary",
@@ -169,12 +178,7 @@ const APP_DATA = [
         techStack: ["JavaScript", "CSS", "Leaflet"],
         learning: "Organising a multi-day itinerary around geographic flow, and connecting schedules with maps so the next stop is easy to find.",
         learningDraft: true
-      }
-    ]
-  },
-  {
-    category: "Archives",
-    apps: [
+      },
       {
         id: "guangzhou-itinerary",
         name: "2026 Sep Guangzhou Trip Itinerary",
