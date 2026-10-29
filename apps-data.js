@@ -85,6 +85,7 @@ const APP_DATA = [
         name: "Bishy-Bashy",
         url: "https://goatedapps.github.io/Bishy-Bashy/",
         description: "A multiplayer game",
+        screenshot: "images/apps/bishy-bashy.png",
         techStack: ["HTML", "CSS", "JavaScript"],
         learning: "Server-Client website, Multiplayer game, Render as game server",
         learningDraft: false

@@ -16,7 +16,7 @@ let storageAvailable = true;
 try { const saved = JSON.parse(localStorage.getItem(storageKey) || '[]'); if (Array.isArray(saved)) pins = new Set(saved.filter(key => apps.some(app => app.key === key))); } catch { storageAvailable = false; }
 let category = 'All apps';
 let query = '';
-let featured = apps.find(app => app.id === 'word-spirit-quest') || apps[0];
+let featured = apps.find(app => app.id === 'bishy-bashy') || apps[0];
 let lastDetailTrigger;
 const star = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.7 6.3.9-4.5 4.4 1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"/></svg>';
 const external = '<span aria-hidden="true">↗</span>';
