@@ -7,4 +7,3 @@ Use stable app IDs for frequently-used preferences, and handle unavailable brows
 Project screenshots live in `images/apps/`; learning notes marked as drafts and unverified stacks require owner review before publication.
 Keep the homepage and mockups usable by opening their HTML files directly, without a build step.
 The selected Screening room concept combines a category sidebar with a manually navigated hero and three persistent appearance choices, styled in `mockups/cinema.css`.
-The unlinked JB–KL travel page in `Travel/` opens a train-driver cab with generated scenery and daily itinerary dialogs; see that folder's guide before editing it.
