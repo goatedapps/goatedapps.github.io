@@ -168,6 +168,21 @@ const APP_DATA = [
     ]
   },
   {
+    category: "Travel",
+    apps: [
+      {
+        id: "2026-JBKL-itinerary",
+        name: "2026 JB and KL Trip",
+        url: "https://goatedapps.github.io/Travel/2026JB-KL.html",
+        description: "JB KL Trip",
+        screenshot: "images/apps/2026jbkl.png",
+        techStack: ["JavaScript", "CSS"],
+        learning: "GSAP skill, sound effects",
+        learningDraft: false
+      }
+    ]
+  }
+  {
     category: "Archives",
     apps: [
       {
