@@ -79,14 +79,14 @@
   .food-map-sidebar { padding: 20px 17px; }
 }
 @media(max-width:700px) {
-  .console-rail { margin: 10px 0 0; padding: 5px 3px 5px; gap: 6px; scrollbar-width: thin; }
+  .console-rail { margin: 0; padding: 5px 3px 5px; gap: 6px; scrollbar-width: thin; }
   .rail-day { flex: 0 0 80px; padding: 0 3px 4px; gap: 5px; }
   .rail-day>span { display: block; }
   .rail-date { font-size: 9px; }
   .rail-highlight { font-size: 8px; }
   .console-rail-line { top: 8px; width: 590px; left: 10px; right: auto; }
   .cab[data-day="5"] .display-date>strong { font-size: 18px; letter-spacing: -.6px; }
-  .console-bottom-row { margin-top: 8px; }
+  .console-bottom-row { margin-top: 0; }
   #cab-hint { display: none; }
   .cab-food-map { padding: 7px 8px; margin-left: auto; }
   .cab-food-map>span:last-child { display: none; }
@@ -102,11 +102,12 @@
   .food-map-mute { font-size: 16px; }
   .food-map-layout { display: block; overflow-y: auto; }
   .food-map-board { border-right: 0; border-bottom: 1px solid #d5dec2; }
-  .food-map-pan { height: 480px; min-height: 0; }
-  .food-map-canvas { width: 640px; height: 480px; }
-  .food-area-marker { min-width: 100px; max-width: 160px; padding: 10px 11px; }
-  .food-area-marker[aria-pressed=true] { padding: 9px 10px; }
-  .area-marker-name { font-size: 12px; }
+  .food-map-pan { height: auto; min-height: 0; aspect-ratio: 4 / 3; overflow: hidden; }
+  .food-map-canvas { width: 100%; height: 100%; }
+  .food-area-marker { min-width: 0; max-width: 102px; min-height: 44px; padding: 6px 8px; box-shadow: 2px 2px 0 #45633d44; }
+  .food-area-marker[aria-pressed=true] { padding: 5px 7px; }
+  .area-marker-name { font-size: 10px; }
+  .food-area-marker .home-badge { font-size: 7px; margin-bottom: 3px; padding: 2px 4px; }
   .food-map-sidebar { max-height: none; overflow: visible; padding: 21px; }
   .food-back-map { display: block; font-size: 9px; color: #8b9b76; padding: 0 0 16px; }
   .food-area-intro h3 { font-size: 25px; }

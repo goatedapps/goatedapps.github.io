@@ -221,7 +221,7 @@
   .cab-brand>span:last-child { font-size: 20px; }
   .cab-brand small { font-size: 7px; }
   .cab-trip-dates { font-size: 8px; padding: 8px 9px; }
-  .windshield { top: 80px; left: 13px; right: 13px; bottom: 273px; border-width: 5px; border-radius: 19px 19px 9px 9px; box-shadow: 0 0 0 2px #79917a,0 0 0 6px #31564a; }
+  .windshield { top: 80px; left: 13px; right: 13px; bottom: 250px; border-width: 5px; border-radius: 19px 19px 9px 9px; box-shadow: 0 0 0 2px #79917a,0 0 0 6px #31564a; }
   .cab-window-heading { left: 16px; right: 16px; top: 18px; }
   .cab-window-heading p { font-size: 8px; padding: 6px 9px; margin-bottom: 8px; }
   .cab-window-heading h1 { font-size: 30px; line-height: 1.08; letter-spacing: -1px; max-width: 290px; }
@@ -236,41 +236,40 @@
   #skip-ride { font-size: 8px; padding: 8px; white-space: nowrap; }
   .window-wiper { width: 42%; left: 8%; bottom: 7%; height: 4px; }
   .window-wiper:before { height: 6px; }
-  .driver-console { bottom: 23px; left: 8px; right: 8px; height: 270px; grid-template-columns: minmax(0,1fr) 135px; align-items: start; gap: 8px; padding: 20px 14px 16px; border-width: 2px; border-bottom-width: 7px; border-radius: 15px; }
+  .driver-console { bottom: 23px; left: 8px; right: 8px; height: 260px; grid-template-columns: minmax(0,1fr) 108px; grid-template-rows: 128px 58px 34px; align-items: start; gap: 5px 10px; padding: 10px 12px; border-width: 2px; border-bottom-width: 7px; border-radius: 15px; transform: none; }
   .console-top-edge { left: 10px; right: 10px; }
-  .route-display { display: flex; flex-wrap: wrap; align-content: center; min-height: 124px; gap: 9px 10px; padding: 12px 10px; }
-  .display-date { border: 0; padding: 0; flex-basis: calc(100% - 32px); gap: 4px; }
+  .route-console { display: contents; }
+  .route-display { grid-column: 1; grid-row: 1; display: grid; grid-template-columns: minmax(0,1fr) auto; min-height: 108px; gap: 10px 8px; padding: 10px; align-self: center; }
+  .display-date { border: 0; padding: 0; gap: 4px; }
   .display-date>span { font-size: 8px; }
-  .display-date>strong { font-size: 25px; }
-  .display-destination { order: 3; flex-basis: 100%; }
+  .display-date>strong { font-size: 24px; }
+  .display-destination { grid-column: 1 / -1; grid-row: 2; }
   .display-destination>span { font-size: 7px; }
   .display-destination>strong { font-size: 12px; }
   #destination-caption { display: none; }
   #next-stop-label { font-size: 7px; line-height: 1.5; }
-  .display-day-count { order: 2; margin: 0; align-self: flex-start; }
-  .display-day-count strong { font-size: 22px; }
+  .display-day-count { grid-column: 2; grid-row: 1; margin: 0; align-self: end; }
+  .display-day-count strong { font-size: 21px; }
   .display-day-count>span { font-size: 7px; }
-  .console-rail { margin: 14px 3px 0; gap: 4px; }
-  .rail-day>span { display: none; }
+  .console-rail { grid-column: 1 / -1; grid-row: 2; min-width: 0; align-self: stretch; }
   .rail-day>i { height: 8px; width: 8px; box-shadow: 0 0 0 2px #3e6654; }
-  .console-rail-line { top: 3px; left: 3px; right: 3px; }
-  .console-bottom-row { margin-top: 15px; }
+  .console-bottom-row { grid-column: 1 / -1; grid-row: 3; }
   .itinerary-button { padding: 10px 8px; font-size: 8px; width: 100%; }
   .itinerary-button>span { padding-right: 3px; }
-  #cab-hint { font-size: 7px; line-height: 1.6; margin-top: 10px; max-width: 190px; }
-  .throttle-cluster { padding-top: 1px; }
+  #cab-hint { display: none; }
+  .throttle-cluster { grid-column: 2; grid-row: 1; padding-top: 0; }
   .direction-control { padding: 2px; }
   .direction-control>button { padding: 7px 8px; font-size: 7px; }
-  .throttle-well { width: 135px; height: 140px; margin-top: 17px; }
-  .throttle-slot { left: 46px; bottom: 4px; top: 9px; }
-  .throttle-slot>i { height: 85px; }
-  .throttle-slot>span { font-size: 6px; left: 47px; }
-  .lever-mechanism { width: 135px; bottom: -4px; left: 0; height: 139px; }
+  .throttle-well { width: 108px; height: 64px; margin-top: 20px; }
+  .throttle-slot { left: 39px; width: 32px; bottom: 0; top: 0; }
+  .throttle-slot>i { height: 50px; top: 12px; left: 12px; }
+  .throttle-slot>span { font-size: 6px; left: 35px; }
+  .lever-mechanism { width: 135px; bottom: -4px; left: 13px; height: 139px; transform: scale(.6); transform-origin: bottom left; }
   .lever-foot { left: 24px; width: 86px; }
   .lever-stem { left: 61px; height: 95px; }
   .lever-grip { width: 86px; height: 43px; left: 24px; bottom: 92px; }
-  .lever-label { font-size: 9px; margin-top: 7px; }
-  .lever-label>span { font-size: 7px; margin-top: 2px; }
+  .lever-label { font-size: 8px; margin-top: 6px; }
+  .lever-label>span { display: none; }
   .cab-footnote { left: 18px; right: 18px; font-size: 6px; bottom: 6px; gap: 10px; }
   .cab-footnote>span:first-child { display: none; }
   .cab-footnote>span:nth-child(2) { line-height: 1.5; }
@@ -294,10 +293,10 @@
   .free-day-card p { font-size: 11px; }
 }
 @media(max-width:365px) {
-  .driver-console { grid-template-columns: minmax(0,1fr) 118px; padding-left: 12px; padding-right: 10px; }
-  .throttle-well { transform: scale(.9); transform-origin: top center; }
+  .driver-console { grid-template-columns: minmax(0,1fr) 98px; gap: 5px 8px; padding-left: 10px; padding-right: 10px; }
+  .display-date>strong { font-size: 21px; }
   .direction-control>button { font-size: 6px; padding: 7px; }
-  .lever-label { font-size: 8px; margin-top: -6px; }
+  .lever-label { font-size: 8px; }
   .cab-brand>span:last-child { font-size: 18px; }
   .cab-trip-dates { font-size: 7px; padding: 8px; }
 }

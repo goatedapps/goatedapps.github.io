@@ -14,6 +14,7 @@ Departure, cruise and approach cues follow the GSAP journey phases; `verify-driv
 `food-map-data.js` holds the five food areas, fourteen restaurants, and exact source-image filenames, including filename case.
 `food-map.js` and `food-map.css` provide the schematic map and full-size photo viewer; originals stay in `images/itinerary-images/`, with lightweight previews in `images/food-thumbs/`.
 KL Food Compass uses `images/kl-food-compass.webp` as its generated artwork; keep place labels interactive and omit decorative helper text.
+On phones, keep the date and stop count on one row, the timeline across the console width, and the complete food-map artwork visible without horizontal panning.
 Photo arrows sit beside the full-size image and cycle within the selected eatery; preserve source filenames and case when adding photos.
 Daily itinerary entries use `foodIds` to reuse food-map photos, plus optional activity `images`, Drive `link`, and collapsible `story` fields in `trip-data.js`.
 Itinerary thumbnails open the shared photo viewer through `openPhotos`, with the itinerary preserved underneath.
