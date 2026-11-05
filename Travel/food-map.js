@@ -5,6 +5,7 @@ function createFoodMap({toggleMute,isMuted}) {
   let area = FOOD_MAP_AREAS[0];
   let restaurant = area.restaurants[0];
   let photo = 0;
+  let photoCollection;
   let reveal;
   let swipeStart;
   const bowl = `<svg viewBox="0 0 80 70" aria-hidden="true"><path d="M10 32h60q-5 25-30 25T10 32" fill="#e9be67"/><ellipse cx="40" cy="32" rx="30" ry="9" fill="#f9edcc"/><path d="M23 29q6-10 12 0t12 0t12 0M28 20q-5-7 0-13m15 13q-5-7 0-13" stroke="#86976b" fill="none" stroke-width="3"/><path d="m57 28 12-23m-6 26 12-24" stroke="#536f58" stroke-width="3"/><path d="M25 59h30" stroke="#cfa551" stroke-width="4"/></svg>`;
@@ -40,15 +41,15 @@ function createFoodMap({toggleMute,isMuted}) {
     }
   }
   function showPhoto(index) {
-    photo=((index%restaurant.images.length)+restaurant.images.length)%restaurant.images.length;
-    const file=restaurant.images[photo];
-    host.querySelector('#food-photo-title').textContent=restaurant.name;
-    host.querySelector('#food-photo-counter').textContent=`Photo ${photo+1} of ${restaurant.images.length}`;
+    photo=((index%photoCollection.images.length)+photoCollection.images.length)%photoCollection.images.length;
+    const file=photoCollection.images[photo];
+    host.querySelector('#food-photo-title').textContent=photoCollection.name;
+    host.querySelector('#food-photo-counter').textContent=`Photo ${photo+1} of ${photoCollection.images.length}`;
     const image=host.querySelector('#food-full-photo');
-    image.src=original(file);image.alt=`${restaurant.name}, supplied photo ${photo+1}`;
+    image.src=original(file);image.alt=`${photoCollection.name}, supplied photo ${photo+1}`;
     host.querySelector('#food-photo-original').href=original(file);
-    host.querySelector('#food-photo-prev').disabled=restaurant.images.length<2;
-    host.querySelector('#food-photo-next').disabled=restaurant.images.length<2;
+    host.querySelector('#food-photo-prev').disabled=photoCollection.images.length<2;
+    host.querySelector('#food-photo-next').disabled=photoCollection.images.length<2;
     if(!viewer.open)viewer.showModal();
   }
   function close() { reveal?.revert();dialog.close();document.querySelector('#open-food-map').focus({preventScroll:true}); }
@@ -58,7 +59,7 @@ function createFoodMap({toggleMute,isMuted}) {
     const image=event.target.closest('[data-photo]');
     if(marker)showArea(marker.dataset.area,true);
     else if(food)showRestaurant(food.dataset.restaurant);
-    else if(image)showPhoto(Number(image.dataset.photo));
+    else if(image){photoCollection=restaurant;showPhoto(Number(image.dataset.photo));}
   });
   host.querySelector('#food-back-map').addEventListener('click',()=>host.querySelector('.food-map-layout').scrollTo({top:0,behavior:media.matches?'auto':'smooth'}));
   host.querySelector('.food-map-close').addEventListener('click',close);
@@ -80,5 +81,5 @@ function createFoodMap({toggleMute,isMuted}) {
     modal.addEventListener('click',event=>{if(outside&&event.target===modal){modal===dialog?close():viewer.close();}outside=false;});
   }
   showArea('home');
-  return {open(){if(!dialog.open){dialog.showModal();showArea(area.id);}}};
+  return {openPhotos(collection,index=0){photoCollection=collection;showPhoto(index);},open(){if(!dialog.open){dialog.showModal();showArea(area.id);}}};
 }

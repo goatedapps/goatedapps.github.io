@@ -158,13 +158,32 @@ function renderDriverCab() {
     document.querySelector('#journey-status').textContent=`Arrived at stop ${current+1}, ${day.date}. ${scene.activity}.`;
     updateControls();
   }
+  const restaurants = FOOD_MAP_AREAS.flatMap(area=>area.restaurants);
+  function itemPhotos(item) {
+    return [
+      ...(item.images?.length?[{name:item.title,images:item.images}]:[]),
+      ...(item.foodIds||[]).map(id=>restaurants.find(restaurant=>restaurant.id===id)).filter(restaurant=>restaurant?.images.length)
+    ];
+  }
+  function itineraryExtras(item,itemIndex) {
+    const story=item.story?`<details class="activity-story"><summary>${escapeContext(item.storyTitle)}</summary><p>${escapeContext(item.story)}</p></details>`:'';
+    const link=item.link?`<a class="activity-link" href="${escapeContext(item.link)}" target="_blank" rel="noopener">${item.kind==='Train'?'Train booking':'Escape room booking'} · Google Drive ↗</a>`:'';
+    const photos=itemPhotos(item).map((collection,collectionIndex)=>`<div class="activity-photos" role="group" aria-label="${escapeContext(collection.name)} photos">${collection.images.map((file,index)=>`<button type="button" data-itinerary-item="${itemIndex}" data-itinerary-collection="${collectionIndex}" data-itinerary-photo="${index}" aria-label="View ${escapeContext(collection.name)} photo ${index+1} full size"><img src="images/${item.foodIds?'food-thumbs/'+encodeURIComponent(file.toLowerCase().replace(/\.png$/i,'.webp')):'itinerary-images/'+encodeURIComponent(file)}" alt="${escapeContext(collection.name)} photo ${index+1}" loading="lazy"></button>`).join('')}</div>`).join('');
+    return story+link+photos;
+  }
+  document.querySelector('#sheet-scroll').addEventListener('click',event=>{
+    const button=event.target.closest('[data-itinerary-photo]');
+    if(!button)return;
+    const item=stationDays[current].items[Number(button.dataset.itineraryItem)];
+    foodMap.openPhotos(itemPhotos(item)[Number(button.dataset.itineraryCollection)],Number(button.dataset.itineraryPhoto));
+  });
   function openItinerary() {
     if(travelling||dialog.open)return;
     const day=stationDays[current];
     document.querySelector('#sheet-date').textContent=`Stop ${String(current+1).padStart(2,'0')} / ${day.weekday}, ${day.date} 2026`;
     document.querySelector('#itinerary-title').textContent=day.title;
     document.querySelector('#sheet-stay').textContent=day.stay;
-    document.querySelector('#sheet-scroll').innerHTML=day.items.length?`<table class="activities-table"><caption class="cab-sr-only">Activities for ${escapeContext(day.date)}</caption><thead><tr><th scope="col">When</th><th scope="col">The plan</th></tr></thead><tbody>${day.items.map(item=>`<tr><th scope="row">${escapeContext(item.time)}</th><td><strong>${escapeContext(item.title)}</strong>${item.booked?'<span class="activity-booked">Booked</span>':''}<p>${escapeContext(item.note)}</p>${item.options?`<ul>${item.options.map(option=>`<li>${escapeContext(option)}</li>`).join('')}</ul>`:''}</td></tr>`).join('')}</tbody></table>`:`<div class="free-day-card"><span aria-hidden="true">▦</span><h3>A day with room to play.</h3><p>No activities planned yet.<br>Your Legoland Hotel base is set. The rest is yours to build.</p><small>The scene shows your base, not a booked park visit.</small></div>`;
+    document.querySelector('#sheet-scroll').innerHTML=day.items.length?`<table class="activities-table"><caption class="cab-sr-only">Activities for ${escapeContext(day.date)}</caption><thead><tr><th scope="col">When</th><th scope="col">The plan</th></tr></thead><tbody>${day.items.map((item,itemIndex)=>`<tr><th scope="row">${escapeContext(item.time)}</th><td><strong>${escapeContext(item.title)}</strong>${item.booked?'<span class="activity-booked">Booked</span>':''}<p>${escapeContext(item.note)}</p>${item.options?`<ul>${item.options.map(option=>`<li>${escapeContext(option)}</li>`).join('')}</ul>`:''}${itineraryExtras(item,itemIndex)}</td></tr>`).join('')}</tbody></table>`:`<div class="free-day-card"><span aria-hidden="true">▦</span><h3>A day with room to play.</h3><p>No activities planned yet.<br>Your Legoland Hotel base is set. The rest is yours to build.</p><small>The scene shows your base, not a booked park visit.</small></div>`;
     if(day.groupedDays) document.querySelector('#sheet-scroll').innerHTML=`<p class="grouped-legoland-note">One Legoland stop for 30 November–2 December. Detailed activities can be added later.</p><table class="activities-table"><thead><tr><th scope="col">Date</th><th scope="col">The plan</th></tr></thead><tbody>${day.groupedDays.map(d=>`<tr><th scope="row">${escapeContext(d.date)}</th><td><strong>Legoland</strong><p>Daily details to come.</p></td></tr>`).join('')}</tbody></table>`;
     document.querySelector('#sheet-footnote').textContent=day.items.some(item=>item.options)?'Prices are from your plan, not live quotes. “$” currency is as supplied.':'Your plan, ready when you need it.';
     dismissOnBackdrop=false;
