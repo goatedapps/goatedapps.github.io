@@ -65,13 +65,13 @@
 .food-photo-dialog h3 { font-size: 18px; letter-spacing: -.4px; }
 .food-photo-dialog>header span { display: block; font-size: 9px; color: #98a07f; margin-top: 4px; }
 .food-photo-close { font-size: 27px; background: #e9e9d3; border-radius: 50%; height: 31px; width: 31px; }
-.food-full-photo { position: relative; height: min(72svh,770px); background: #e9e6d3; padding: 10px 72px; touch-action: pan-y; }
-.food-full-photo>img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.food-full-photo { position: relative; background: #e9e6d3; touch-action: pan-y; }
+.food-photo-image { max-height: min(72svh,770px); overflow-y: auto; overscroll-behavior: contain; }
+.food-photo-image>img { display: block; width: 100%; height: auto; }
 .food-photo-arrow { position: absolute; top: 50%; transform: translateY(-50%); display: grid; place-items: center; width: 48px; height: 66px; font-size: 48px; line-height: 1; background: #345e4ce8; color: #fff5d7; border: 1px solid #87a27c; border-radius: 7px; box-shadow: 0 3px 8px #284f3533; padding-bottom: 5px; }
 .food-photo-arrow:hover:enabled { background: #507959; }
 .photo-arrow-left { left: 12px; }
 .photo-arrow-right { right: 12px; }
-.food-photo-dialog>footer { display: flex; align-items: center; justify-content: center; padding: 12px 21px; font-size: 10px; }
 .food-map-dialog button:focus-visible,.food-map-dialog [tabindex]:focus-visible,.food-photo-dialog button:focus-visible,.food-photo-dialog a:focus-visible { outline: 3px solid #557e5a; outline-offset: 3px; }
 @media(max-width:1100px) {
   .cab-header-route { display: none; }
@@ -120,7 +120,7 @@
   .food-map-footer>button { font-size: 8px; padding: 10px 11px; white-space: nowrap; }
   .food-photo-dialog>header { padding: 16px; }
   .food-photo-dialog h3 { font-size: 16px; }
-  .food-full-photo { height: min(70svh,650px); padding: 8px 48px; }
+  .food-photo-image { max-height: min(70svh,650px); }
   .food-photo-arrow { width: 36px; height: 58px; font-size: 39px; border-radius: 5px; }
   .photo-arrow-left { left: 6px; }
   .photo-arrow-right { right: 6px; }
