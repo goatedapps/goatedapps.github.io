@@ -110,6 +110,16 @@ const FOOD_MAP_AREAS = [
           "don-no-makase-3.jpeg",
           "don-no-makase-4.jpeg"
         ]
+      },
+      {
+        "id": "the-grass",
+        "name": "The Grass",
+        "images": [
+          "the-grass-1.jpeg",
+          "the-grass-2.jpeg",
+          "the-grass-3.jpeg",
+          "the-grass-4.jpeg"
+        ]
       }
     ]
   },

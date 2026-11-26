@@ -27,9 +27,11 @@ const {pathToFileURL}=require('node:url');
     await page.emulateMedia({reducedMotion:'reduce'});
     await page.locator('[data-rail-day="2"]').click();await arrive(page,2);
     assert.equal(await page.locator('.activity-booked').textContent(),'Booked');
-    const lunchPhotos=page.getByRole('group',{name:'Don no Makase photos'}).locator('img');
-    assert.equal(await lunchPhotos.count(),4);
-    await lunchPhotos.evaluateAll(images=>Promise.all(images.map(image=>image.decode())));
+    for(const name of ['Don no Makase','The Grass']) {
+      const photos=page.getByRole('group',{name:name+' photos'}).locator('img');
+      assert.equal(await photos.count(),4);
+      await photos.evaluateAll(images=>Promise.all(images.map(image=>image.decode())));
+    }
     await page.keyboard.press('Escape');
     await page.locator('[data-rail-day="2"]').click();
     assert.equal(await page.locator('#itinerary-dialog').getAttribute('open'),'');
@@ -44,7 +46,7 @@ const {pathToFileURL}=require('node:url');
     await page.locator('.food-feature-photo img').evaluate(image=>image.decode());
     await page.screenshot({path:path.join(__dirname,'previews/food-map-desktop.png')});
     let photos=0;
-    for(const [area,id,count] of [['home','tangkak',3],['home','tea-garden',3],['home','palates',3],['lalaport','sukiya',3],['lalaport','parathai',6],['lalaport','leten',3],['nu-sentral','dolly',2],['nu-sentral','don-omakase',4],['pavilion','fei-fei',5],['pudu','tangfei',4]]) {
+    for(const [area,id,count] of [['home','tangkak',3],['home','tea-garden',3],['home','palates',3],['lalaport','sukiya',3],['lalaport','parathai',6],['lalaport','leten',3],['nu-sentral','dolly',2],['nu-sentral','don-omakase',4],['nu-sentral','the-grass',4],['pavilion','fei-fei',5],['pudu','tangfei',4]]) {
       await page.locator(`[data-area="${area}"]`).click();
       await page.locator(`[data-restaurant="${id}"]`).click();
       assert.equal(await page.locator('.food-photo-thumbnails button').count(),count);
@@ -64,7 +66,7 @@ const {pathToFileURL}=require('node:url');
       await page.keyboard.press('Escape');
       assert.equal(await page.locator('#food-map-dialog').getAttribute('open'),'');
     }
-    assert.equal(photos,36);
+    assert.equal(photos,40);
     await page.locator('[data-area="lalaport"]').click();
     await page.locator('[data-restaurant="oiso"]').click();
     assert.match(await page.locator('.food-no-photo').textContent(),/No photos yet/);
