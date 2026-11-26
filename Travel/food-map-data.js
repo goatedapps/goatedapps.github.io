@@ -100,6 +100,11 @@ const FOOD_MAP_AREAS = [
           "dolly-dimsum-1.png",
           "dolly-dimsum-2.png"
         ]
+      },
+      {
+        "id": "don-omakase",
+        "name": "Don Omakase",
+        "images": []
       }
     ]
   },
