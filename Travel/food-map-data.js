@@ -103,8 +103,13 @@ const FOOD_MAP_AREAS = [
       },
       {
         "id": "don-omakase",
-        "name": "Don Omakase",
-        "images": []
+        "name": "Don no Makase",
+        "images": [
+          "don-no-makase-1.jpeg",
+          "don-no-makase-2.jpeg",
+          "don-no-makase-3.jpeg",
+          "don-no-makase-4.jpeg"
+        ]
       }
     ]
   },
